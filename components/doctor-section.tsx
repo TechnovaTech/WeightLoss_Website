@@ -39,7 +39,7 @@ export function DoctorSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-gradient-to-b from-white to-ivory">
+    <section ref={ref} className="py-40 bg-gradient-to-b from-white to-ivory">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

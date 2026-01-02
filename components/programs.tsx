@@ -57,7 +57,7 @@ export function Programs() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-gradient-to-b from-ivory to-white relative overflow-hidden">
+    <section ref={ref} className="py-40 bg-gradient-to-b from-ivory to-white relative overflow-hidden">
       <motion.div
         animate={{
           scale: [1, 1.2, 1],

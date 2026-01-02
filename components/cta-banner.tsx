@@ -11,7 +11,7 @@ export function CTABanner() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-24 md:py-32 relative overflow-hidden">
+    <section ref={ref} className="py-40 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-forest via-forest/95 to-sage"></div>
       <div className="absolute inset-0 bg-[url('/wellness-spa-calm-lifestyle.jpg')] bg-cover bg-center opacity-10"></div>
 

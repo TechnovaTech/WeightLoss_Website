@@ -79,7 +79,7 @@ export function Testimonials() {
   }
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-gradient-to-b from-ivory to-white relative overflow-hidden">
+    <section ref={ref} className="py-40 bg-gradient-to-b from-green-50 to-green-100 relative overflow-hidden">
       {/* Animated background orbs */}
       <motion.div
         animate={{
@@ -88,7 +88,7 @@ export function Testimonials() {
           opacity: [0.1, 0.2, 0.1],
         }}
         transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
-        className="absolute top-1/4 right-0 w-96 h-96 bg-sage/20 rounded-organic-3 blur-3xl"
+        className="absolute top-1/4 right-0 w-96 h-96 bg-green-200/30 rounded-organic-3 blur-3xl"
       />
       <motion.div
         animate={{
@@ -97,7 +97,7 @@ export function Testimonials() {
           opacity: [0.1, 0.15, 0.1],
         }}
         transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
-        className="absolute bottom-1/4 left-0 w-96 h-96 bg-gold/10 rounded-organic-2 blur-3xl"
+        className="absolute bottom-1/4 left-0 w-96 h-96 bg-green-300/20 rounded-organic-2 blur-3xl"
       />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -107,11 +107,11 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-6 text-balance">
-            Success <span className="gradient-gold-light text-gradient">Stories</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-forest mb-6 text-balance">
+            Patient <span className="gradient-gold-light text-gradient">Success</span> Stories
           </h2>
-          <p className="text-xl text-charcoal/60 max-w-2xl mx-auto text-pretty">
-            Real results from real patients who transformed their lives
+          <p className="text-xl text-forest/80 max-w-2xl mx-auto text-pretty">
+            Real transformations from our Scottsdale Weight Loss Center patients
           </p>
         </motion.div>
 
@@ -131,7 +131,7 @@ export function Testimonials() {
                   scale: { duration: 0.4 },
                   rotateY: { duration: 0.6 },
                 }}
-                className="bg-white/90 backdrop-blur-xl rounded-[2.5rem] p-8 lg:p-12 border-2 border-sage/20 shadow-2xl relative overflow-hidden"
+                className="card-glass rounded-[2.5rem] p-8 lg:p-12 border-2 border-forest/20 card-elevated relative overflow-hidden"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Decorative elements */}
@@ -199,13 +199,22 @@ export function Testimonials() {
                         ))}
                       </div>
 
-                      <p className="text-xl md:text-2xl text-charcoal/90 mb-8 leading-relaxed text-pretty">
+                      <blockquote className="text-lg md:text-xl text-forest/90 leading-relaxed mb-6 italic font-medium">
                         "{testimonials[currentIndex].quote}"
-                      </p>
+                      </blockquote>
 
-                      <div>
-                        <p className="text-xl font-bold text-charcoal">{testimonials[currentIndex].name}</p>
-                        <p className="text-sm text-charcoal/50">Verified Patient</p>
+                      <div className="flex items-center justify-center lg:justify-start gap-3">
+                        <div className="w-12 h-12 rounded-full bg-gradient-forest-sage flex items-center justify-center text-white font-bold text-lg border-2 border-gold/30">
+                          {testimonials[currentIndex].name[0]}
+                        </div>
+                        <div>
+                          <p className="font-bold text-forest text-lg">
+                            {testimonials[currentIndex].name}
+                          </p>
+                          <p className="text-gold font-semibold text-sm">
+                            Lost {testimonials[currentIndex].weight}
+                          </p>
+                        </div>
                       </div>
                     </motion.div>
                   </div>
@@ -213,45 +222,43 @@ export function Testimonials() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation buttons */}
-            <div className="flex justify-center gap-4 mt-10">
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={prev}
-                  className="rounded-full border-2 border-forest text-forest hover:bg-forest hover:text-white transition-all bg-white h-14 w-14 shadow-lg"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={next}
-                  className="rounded-full border-2 border-forest text-forest hover:bg-forest hover:text-white transition-all bg-white h-14 w-14 shadow-lg"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </Button>
-              </motion.div>
+            {/* Navigation Buttons */}
+            <div className="flex justify-center gap-4 mt-12">
+              <Button
+                onClick={prev}
+                variant="outline"
+                size="lg"
+                className="rounded-full w-14 h-14 border-2 border-forest hover:bg-forest hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl glow-gold-hover"
+                suppressHydrationWarning
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </Button>
+              <Button
+                onClick={next}
+                variant="outline"
+                size="lg"
+                className="rounded-full w-14 h-14 border-2 border-forest hover:bg-forest hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl glow-gold-hover"
+                suppressHydrationWarning
+              >
+                <ChevronRight className="w-6 h-6" />
+              </Button>
             </div>
 
-            {/* Progress indicators */}
+            {/* Dots Indicator */}
             <div className="flex justify-center gap-3 mt-8">
               {testimonials.map((_, index) => (
-                <motion.button
+                <button
                   key={index}
                   onClick={() => {
                     setDirection(index > currentIndex ? 1 : -1)
                     setCurrentIndex(index)
                   }}
-                  whileHover={{ scale: 1.2 }}
-                  className={`h-2.5 rounded-full transition-all duration-500 ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? "bg-gradient-to-r from-forest to-gold w-12"
-                      : "bg-sage/30 w-2.5 hover:bg-sage/50"
+                      ? "bg-gold scale-125 shadow-lg glow-gold"
+                      : "bg-forest/30 hover:bg-forest/60"
                   }`}
+                  suppressHydrationWarning
                 />
               ))}
             </div>
@@ -260,4 +267,4 @@ export function Testimonials() {
       </div>
     </section>
   )
-}
+}          

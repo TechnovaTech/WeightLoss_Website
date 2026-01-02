@@ -40,7 +40,7 @@ export function HowItWorks() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-gradient-to-b from-sage-light/30 to-white relative overflow-hidden">
+    <section ref={ref} className="py-40 bg-gradient-to-b from-sage-light/30 to-white relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-forest rounded-full animate-pulse" />
