@@ -79,7 +79,7 @@ export function Testimonials() {
   }
 
   return (
-    <section ref={ref} className="py-40 bg-gradient-to-b from-green-50 to-green-100 relative overflow-hidden">
+    <section ref={ref} className="py-40 bg-gradient-to-b from-ivory to-white relative overflow-hidden">
       {/* Animated background orbs */}
       <motion.div
         animate={{
@@ -88,7 +88,7 @@ export function Testimonials() {
           opacity: [0.1, 0.2, 0.1],
         }}
         transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
-        className="absolute top-1/4 right-0 w-96 h-96 bg-green-200/30 rounded-organic-3 blur-3xl"
+        className="absolute top-1/4 right-0 w-96 h-96 bg-sage/20 rounded-organic-3 blur-3xl"
       />
       <motion.div
         animate={{
@@ -97,7 +97,7 @@ export function Testimonials() {
           opacity: [0.1, 0.15, 0.1],
         }}
         transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
-        className="absolute bottom-1/4 left-0 w-96 h-96 bg-green-300/20 rounded-organic-2 blur-3xl"
+        className="absolute bottom-1/4 left-0 w-96 h-96 bg-gold/10 rounded-organic-2 blur-3xl"
       />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -107,10 +107,10 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-forest mb-6 text-balance">
-            Patient <span className="gradient-gold-light text-gradient">Success</span> Stories
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 mb-6 text-balance">
+            Patient <span className="text-green-600">Success</span> Stories
           </h2>
-          <p className="text-xl text-forest/80 max-w-2xl mx-auto text-pretty">
+          <p className="text-xl text-green-700 max-w-2xl mx-auto text-pretty">
             Real transformations from our Scottsdale Weight Loss Center patients
           </p>
         </motion.div>
@@ -135,8 +135,8 @@ export function Testimonials() {
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Decorative elements */}
-                <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-forest/10 to-transparent rounded-br-full" />
-                <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-gold/10 to-transparent rounded-tl-full" />
+                <div className="absolute top-0 left-0 w-40 h-40 bg-green-200/20 rounded-br-full" />
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-green-300/20 rounded-tl-full" />
 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center relative z-10">
                   <div className="lg:col-span-2 flex justify-center">
@@ -171,7 +171,7 @@ export function Testimonials() {
                           delay: 0.4,
                         }}
                         whileHover={{ scale: 1.1, rotate: 5 }}
-                        className="absolute -bottom-4 -right-4 gradient-gold-light text-white px-6 py-3 rounded-2xl text-lg font-bold shadow-2xl glow-gold"
+                        className="absolute -bottom-4 -right-4 bg-green-600 text-white px-6 py-3 rounded-2xl text-lg font-bold shadow-2xl"
                       >
                         -{testimonials[currentIndex].weight}
                       </motion.div>
@@ -184,7 +184,7 @@ export function Testimonials() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
                     >
-                      <Quote className="w-12 h-12 text-forest/20 mb-4 mx-auto lg:mx-0" />
+                      <Quote className="w-12 h-12 text-green-600/30 mb-4 mx-auto lg:mx-0" />
 
                       <div className="flex gap-1 justify-center lg:justify-start mb-6">
                         {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
@@ -194,24 +194,24 @@ export function Testimonials() {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.4 + i * 0.1 }}
                           >
-                            <Star className="w-5 h-5 fill-gold text-gold" />
+                            <Star className="w-5 h-5 fill-green-500 text-green-500" />
                           </motion.div>
                         ))}
                       </div>
 
-                      <blockquote className="text-lg md:text-xl text-forest/90 leading-relaxed mb-6 italic font-medium">
+                      <blockquote className="text-lg md:text-xl text-green-800 leading-relaxed mb-6 italic font-medium">
                         "{testimonials[currentIndex].quote}"
                       </blockquote>
 
                       <div className="flex items-center justify-center lg:justify-start gap-3">
-                        <div className="w-12 h-12 rounded-full bg-gradient-forest-sage flex items-center justify-center text-white font-bold text-lg border-2 border-gold/30">
+                        <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-lg border-2 border-green-400">
                           {testimonials[currentIndex].name[0]}
                         </div>
                         <div>
-                          <p className="font-bold text-forest text-lg">
+                          <p className="font-bold text-green-800 text-lg">
                             {testimonials[currentIndex].name}
                           </p>
-                          <p className="text-gold font-semibold text-sm">
+                          <p className="text-green-600 font-semibold text-sm">
                             Lost {testimonials[currentIndex].weight}
                           </p>
                         </div>
@@ -228,7 +228,7 @@ export function Testimonials() {
                 onClick={prev}
                 variant="outline"
                 size="lg"
-                className="rounded-full w-14 h-14 border-2 border-forest hover:bg-forest hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl glow-gold-hover"
+                className="rounded-full w-14 h-14 border-2 border-green-600 hover:bg-green-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
                 suppressHydrationWarning
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -237,7 +237,7 @@ export function Testimonials() {
                 onClick={next}
                 variant="outline"
                 size="lg"
-                className="rounded-full w-14 h-14 border-2 border-forest hover:bg-forest hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl glow-gold-hover"
+                className="rounded-full w-14 h-14 border-2 border-green-600 hover:bg-green-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
                 suppressHydrationWarning
               >
                 <ChevronRight className="w-6 h-6" />
@@ -255,8 +255,8 @@ export function Testimonials() {
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? "bg-gold scale-125 shadow-lg glow-gold"
-                      : "bg-forest/30 hover:bg-forest/60"
+                      ? "bg-green-600 scale-125 shadow-lg"
+                      : "bg-green-300 hover:bg-green-400"
                   }`}
                   suppressHydrationWarning
                 />
@@ -267,4 +267,4 @@ export function Testimonials() {
       </div>
     </section>
   )
-}          
+}

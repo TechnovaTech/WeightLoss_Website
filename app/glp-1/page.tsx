@@ -7,6 +7,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { Testimonials } from "@/components/testimonials"
 import { CheckCircle, Star, Users, Phone, Calendar, Award, Target, Heart, Zap } from "lucide-react"
 
 export default function GLP1Page() {
@@ -229,88 +230,8 @@ export default function GLP1Page() {
         </section>
 
         {/* Reviews Section */}
-        <section className="py-16 bg-sage/10">
-          <div className="container mx-auto px-4">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl font-bold text-charcoal mb-12 text-center"
-            >
-              Reviews
-            </motion.h2>
-            
-            <div className="overflow-hidden">
-              <div className="flex gap-6 animate-scroll">
-                {[
-                  {
-                    name: "Sarah M.",
-                    rating: 5,
-                    image: "/happy-woman-smiling-confident.jpg",
-                    review: "The staff at Wellness Weight Loss Center is amazing! Dr. Smith helped me lose 45 pounds safely and effectively. I finally feel confident in my own skin again."
-                  },
-                  {
-                    name: "Michael R.",
-                    rating: 5,
-                    image: "/confident-man-smiling-success-healthy.jpg",
-                    review: "Professional, caring, and results-driven. The GLP-1 treatment changed my life. I've lost 38 pounds and my energy levels are through the roof!"
-                  },
-                  {
-                    name: "Jennifer L.",
-                    rating: 5,
-                    image: "/happy-confident-woman-smiling-healthy-lifestyle.jpg",
-                    review: "I was skeptical at first, but the medical supervision and personalized approach made all the difference. Down 52 pounds and couldn't be happier!"
-                  },
-                  {
-                    name: "David K.",
-                    rating: 5,
-                    image: "/happy-man-smiling-healthy-fit-lifestyle.jpg",
-                    review: "The doctor-mentored program exceeded my expectations. Lost 41 pounds in 6 months with ongoing support every step of the way."
-                  },
-                  {
-                    name: "Lisa T.",
-                    rating: 5,
-                    image: "/smiling-woman-healthy-active-lifestyle-outdoors.jpg",
-                    review: "Finally found a weight loss solution that works! The medical team is knowledgeable and supportive. I've maintained my 35-pound weight loss for over a year now."
-                  },
-                  {
-                    name: "Sarah M.",
-                    rating: 5,
-                    image: "/happy-woman-smiling-confident.jpg",
-                    review: "The staff at Wellness Weight Loss Center is amazing! Dr. Smith helped me lose 45 pounds safely and effectively. I finally feel confident in my own skin again."
-                  },
-                  {
-                    name: "Michael R.",
-                    rating: 5,
-                    image: "/confident-man-smiling-success-healthy.jpg",
-                    review: "Professional, caring, and results-driven. The GLP-1 treatment changed my life. I've lost 38 pounds and my energy levels are through the roof!"
-                  }
-                ].map((review, index) => (
-                  <Card key={index} className="flex-shrink-0 w-80 shadow-lg">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <img 
-                          src={review.image} 
-                          alt={review.name} 
-                          className="w-12 h-12 rounded-full object-cover" 
-                        />
-                        <div>
-                          <p className="font-semibold text-forest">{review.name}</p>
-                          <div className="flex items-center gap-1">
-                            {[...Array(review.rating)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-charcoal/80 italic text-sm">"{review.review}"</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+      <Testimonials />
+
         
         <style jsx>{`
           @keyframes scroll {
