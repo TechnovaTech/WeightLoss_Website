@@ -247,7 +247,7 @@ export default function DoctorMentoredPage() {
                   <img 
                     src="https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/1-beautiful-slim-womanposing-and-smiling-scottsdale-weightloss-center.webp" 
                     alt="Beautiful slim woman" 
-                    className="w-full h-auto rounded-lg shadow-lg" 
+                    className="w-full h-auto rounded-lg " 
                   />
                 </motion.div>
                 
