@@ -3,12 +3,14 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isGlpDropdownOpen, setIsGlpDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,13 +34,54 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/services" className="text-charcoal hover:text-forest transition-colors">
-              Services
+            <Link href="/" className="text-charcoal hover:text-forest transition-colors font-medium">
+              Home
             </Link>
-            <Link href="/about" className="text-charcoal hover:text-forest transition-colors">
-              About
-            </Link>
-            <Link href="/contact" className="text-charcoal hover:text-forest transition-colors">
+            <div className="relative" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
+              <button className="flex items-center gap-1 text-charcoal hover:text-forest transition-colors font-medium">
+                Weight Loss Program
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-sage/20 py-2"
+                  >
+                    <div 
+                      className="relative"
+                      onMouseEnter={() => setIsGlpDropdownOpen(true)} 
+                      onMouseLeave={() => setIsGlpDropdownOpen(false)}
+                    >
+                      <div className="flex items-center justify-between px-4 py-2 text-charcoal hover:bg-sage/10 hover:text-forest transition-colors cursor-pointer">
+                        <span>GLP-1</span>
+                        <ChevronDown className="w-4 h-4" />
+                      </div>
+                      <AnimatePresence>
+                        {isGlpDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -10 }}
+                            className="absolute left-full top-0 ml-2 w-56 bg-white rounded-lg shadow-lg border border-sage/20 py-2"
+                          >
+                            <Link href="/medical-weight-loss" className="block px-4 py-2 text-charcoal hover:bg-sage/10 hover:text-forest transition-colors">
+                              Medical Weight Loss Program
+                            </Link>
+                            <Link href="/doctor-mentored" className="block px-4 py-2 text-charcoal hover:bg-sage/10 hover:text-forest transition-colors">
+                              Doctor Mentored
+                            </Link>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            <Link href="/contact" className="text-charcoal hover:text-forest transition-colors font-medium">
               Contact
             </Link>
             <Button className="bg-forest hover:bg-forest/90 text-white px-6 shadow-lg hover:shadow-xl transition-all">
@@ -64,22 +107,22 @@ export function Navigation() {
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               <Link
-                href="/services"
-                className="text-charcoal hover:text-forest transition-colors py-2"
+                href="/"
+                className="text-charcoal hover:text-forest transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Services
+                Home
               </Link>
               <Link
-                href="/about"
-                className="text-charcoal hover:text-forest transition-colors py-2"
+                href="/programs"
+                className="text-charcoal hover:text-forest transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                Weight Loss Program
               </Link>
               <Link
                 href="/contact"
-                className="text-charcoal hover:text-forest transition-colors py-2"
+                className="text-charcoal hover:text-forest transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
