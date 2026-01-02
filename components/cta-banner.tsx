@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
@@ -33,9 +34,12 @@ export function CTABanner() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-forest px-8 py-6 text-lg transition-all duration-300 bg-transparent"
+              asChild
             >
-              <Phone className="mr-2 w-5 h-5" />
-              Call Us Now
+              <Link href="/contact">
+                <Phone className="mr-2 w-5 h-5" />
+                Call Us Now
+              </Link>
             </Button>
           </div>
 

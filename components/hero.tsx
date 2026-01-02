@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
@@ -45,8 +46,9 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-white text-black hover:bg-gray-100 px-8 py-6 text-base rounded-full transition-all duration-300"
+              asChild
             >
-              CALL US
+              <Link href="/contact">CALL US</Link>
             </Button>
           </motion.div>
         </div>

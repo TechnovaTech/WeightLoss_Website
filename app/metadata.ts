@@ -4,7 +4,6 @@ export const metadata: Metadata = {
   title: "Wellness Center - Medical Weight Loss Programs",
   description:
     "Doctor-led, personalized weight loss programs designed for real, lasting results. Expert medical care with GLP-1 treatments, nutrition counseling, and ongoing support.",
-  generator: "v0.app",
   icons: {
     icon: [
       {

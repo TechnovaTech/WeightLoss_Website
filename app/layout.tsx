@@ -8,10 +8,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Wellness Center - Medical Weight Loss Programs",
+  title: "Wellness Centers",
   description:
     "Doctor-led, personalized weight loss programs designed for real, lasting results. Expert medical care with GLP-1 treatments, nutrition counseling, and ongoing support.",
-  generator: "v0.app",
   icons: {
     icon: [
       {

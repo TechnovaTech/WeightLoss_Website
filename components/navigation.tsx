@@ -26,14 +26,14 @@ export function Navigation() {
         isScrolled ? "bg-ivory/95 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-4 lg:px-12">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="text-2xl font-semibold text-forest">
             Wellness Center
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
             <Link href="/" className="text-charcoal hover:text-forest transition-colors font-medium">
               Home
             </Link>
@@ -84,9 +84,6 @@ export function Navigation() {
             <Link href="/contact" className="text-charcoal hover:text-forest transition-colors font-medium">
               Contact
             </Link>
-            <Button className="bg-forest hover:bg-forest/90 text-white px-6 shadow-lg hover:shadow-xl transition-all">
-              Book Consultation
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -127,7 +124,6 @@ export function Navigation() {
               >
                 Contact
               </Link>
-              <Button className="bg-forest hover:bg-forest/90 text-white w-full">Book Consultation</Button>
             </div>
           </motion.div>
         )}

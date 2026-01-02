@@ -219,8 +219,8 @@ export default function GLP1Page() {
                   </div>
                   
                   <div className="flex gap-4">
-                    <Button variant="outline" className="border-forest text-forest hover:bg-forest hover:text-white px-8 py-3 text-lg">
-                      Call Now
+                    <Button variant="outline" className="border-forest text-forest hover:bg-forest hover:text-white px-8 py-3 text-lg" asChild>
+                      <Link href="/contact">Call Now</Link>
                     </Button>
                   </div>
                 </motion.div>

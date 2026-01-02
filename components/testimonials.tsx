@@ -10,7 +10,7 @@ const testimonials = [
   {
     name: "Gina",
     weight: "Significant Loss",
-    image: "/happy-confident-woman-smiling-healthy-lifestyle.jpg",
+    image: "https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/1-gina-weight-loss-before-and-after-scottsdale-weight-loss-center.webp",
     quote:
       "I had no trouble adhering to the meals and they really helped catapult my progress! The classes were so beneficial to me because they helped change my thinking about how I viewed health, nutrition, and fitness. I will always have my relationship with Scottsdale Weight Loss Center. They truly helped me change my life forever.",
     rating: 5,
@@ -18,7 +18,7 @@ const testimonials = [
   {
     name: "Lauren",
     weight: "60 lbs",
-    image: "/smiling-woman-healthy-active-lifestyle-outdoors.jpg",
+    image: "https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/2-lauren_weight-loss-before-and-after-scottsdale-weight-loss-center.webp",
     quote:
       "Dr. Ziltzer and everyone who I have come in contact with at the Scottsdale Weight Loss office have been so encouraging. It is now a year and 2 months later since I started. I am down 60 lbs., which is the average amount a 9-year-old weighs, it is crazy to think I lost a whole person! I feel amazing, I hit my goal weight in November 2021 just before Thanksgiving. Nothing on my body hurts anymore.",
     rating: 5,
@@ -26,7 +26,7 @@ const testimonials = [
   {
     name: "Chuck",
     weight: "66 lbs",
-    image: "/confident-man-smiling-success-healthy.jpg",
+    image: "https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/3-chuck-h-weight-loss-before-and-after-scottsdale-weight-loss-center.webp",
     quote:
       "The best thing I did was call the Scottsdale Weight Loss Center. I have a lot more energy, I'm not hungry, and it feels great. You can take it from me that this is a program that produces results. The staff is always positive, supportive, and never judgmental. Your visits always result in positive reinforcement, no matter if you had a good week or a bad week.",
     rating: 5,
@@ -34,7 +34,7 @@ const testimonials = [
   {
     name: "Emily",
     weight: "61.5 lbs",
-    image: "/happy-man-smiling-healthy-fit-lifestyle.jpg",
+    image: "https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/7-emily_weight-loss-before-and-after-scottsdale-weight-loss-center.webp",
     quote:
       "Here I am at the lowest I have been since high school weighing in at 155lbs. I have lost 61.5lbs, 48.5lb of body fat gone, BMI of 39 when I started, to 27.9. I told myself by my 30th birthday I wanted to be confident in the way I look and I owe it all to SWLC. The entire staff is so welcoming and they are rooting for you just as much as you are rooting for yourself.",
     rating: 5,
@@ -157,7 +157,7 @@ export function Testimonials() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         src={testimonials[currentIndex].image || "/placeholder.svg"}
                         alt={testimonials[currentIndex].name}
-                        className={`relative w-64 h-64 rounded-organic-${(currentIndex % 4) + 1} object-cover shadow-2xl`}
+                        className={`relative w-64 h-64 rounded-lg object-cover shadow-2xl`}
                       />
 
                       {/* Animated weight loss badge */}
