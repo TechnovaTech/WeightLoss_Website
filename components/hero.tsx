@@ -41,13 +41,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-6 text-base rounded-full transition-all duration-300 bg-transparent backdrop-blur-sm"
-            >
-              SCHEDULE CONSULTATION
-            </Button>
+            
             <Button
               size="lg"
               className="bg-white text-black hover:bg-gray-100 px-8 py-6 text-base rounded-full transition-all duration-300"

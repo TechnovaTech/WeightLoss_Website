@@ -28,13 +28,7 @@ export function CTABanner() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-forest hover:bg-ivory px-8 py-6 text-lg shadow-2xl hover:scale-105 transition-all duration-300 group"
-            >
-              Book Free Consultation
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            
             <Button
               size="lg"
               variant="outline"
