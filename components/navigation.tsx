@@ -11,6 +11,7 @@ export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isGlpDropdownOpen, setIsGlpDropdownOpen] = useState(false)
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,13 +111,51 @@ export function Navigation() {
               >
                 Home
               </Link>
-              <Link
-                href="/programs"
-                className="text-charcoal hover:text-forest transition-colors py-2 font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Weight Loss Program
-              </Link>
+              
+              {/* Mobile Weight Loss Program Dropdown */}
+              <div className="flex flex-col">
+                <button
+                  onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+                  className="flex items-center justify-between text-charcoal hover:text-forest transition-colors py-2 font-medium text-left"
+                >
+                  Weight Loss Program
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isMobileDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence>
+                  {isMobileDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="ml-4 mt-2 flex flex-col gap-2"
+                    >
+                      <Link
+                        href="/glp-1"
+                        className="text-charcoal/80 hover:text-forest transition-colors py-1 text-sm"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        GLP-1
+                      </Link>
+                      <Link
+                        href="/medical-weight-loss"
+                        className="text-charcoal/80 hover:text-forest transition-colors py-1 text-sm ml-4"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Medical Weight Loss Program
+                      </Link>
+                      <Link
+                        href="/doctor-mentored"
+                        className="text-charcoal/80 hover:text-forest transition-colors py-1 text-sm ml-4"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Doctor Mentored
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              
               <Link
                 href="/contact"
                 className="text-charcoal hover:text-forest transition-colors py-2 font-medium"
