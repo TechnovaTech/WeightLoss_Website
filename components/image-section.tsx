@@ -77,12 +77,7 @@ export function ImageSection() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-green-400 hover:bg-green-500 text-white px-8 py-3 rounded-full"
-                >
-                  SCHEDULE CONSULTATION
-                </Button>
+                
                 <Button
                   size="lg"
                   className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full"
