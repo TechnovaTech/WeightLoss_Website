@@ -38,10 +38,10 @@ export function Navigation() {
               Home
             </Link>
             <div className="relative" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
-              <button className="flex items-center gap-1 text-charcoal hover:text-forest transition-colors font-medium">
+              <Link href="/programs" className="flex items-center gap-1 text-charcoal hover:text-forest transition-colors font-medium">
                 Weight Loss Program
                 <ChevronDown className="w-4 h-4" />
-              </button>
+              </Link>
               <AnimatePresence>
                 {isDropdownOpen && (
                   <motion.div
@@ -55,10 +55,10 @@ export function Navigation() {
                       onMouseEnter={() => setIsGlpDropdownOpen(true)} 
                       onMouseLeave={() => setIsGlpDropdownOpen(false)}
                     >
-                      <div className="flex items-center justify-between px-4 py-2 text-charcoal hover:bg-sage/10 hover:text-forest transition-colors cursor-pointer">
+                      <Link href="/glp-1" className="flex items-center justify-between px-4 py-2 text-charcoal hover:bg-sage/10 hover:text-forest transition-colors">
                         <span>GLP-1</span>
                         <ChevronDown className="w-4 h-4" />
-                      </div>
+                      </Link>
                       <AnimatePresence>
                         {isGlpDropdownOpen && (
                           <motion.div

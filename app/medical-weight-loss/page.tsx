@@ -65,45 +65,66 @@ export default function MedicalWeightLossPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="pt-32 pb-16"
+          className="relative h-[50vh] flex items-center justify-center overflow-hidden"
         >
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-4xl mx-auto">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <div className="w-full h-full bg-gradient-to-r from-sage/20 via-forest/10 to-sage/30"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/20"></div>
+          </div>
+          
+          {/* Content Container */}
+          <div className="relative z-10 container mx-auto px-4">
+            {/* Center Content */}
+            <div className="text-center">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl font-bold text-charcoal mb-6"
+                className="text-5xl lg:text-6xl font-light text-white/90 mb-8 tracking-wider"
+                style={{ fontFamily: 'serif', color: '#1f3d2b' }}
               >
-                Medical Weight Loss Program
+                Medical Weight Loss
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl text-charcoal/80 mb-8"
+                className="text-xl text-white/80 mb-8 max-w-md mx-auto"
               >
-                Physician-supervised weight loss programs designed for safe, effective, and lasting results
+                Conveniently Located To Serve Scottsdale, Phoenix, Chandler, and Glendale
               </motion.p>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex gap-4 justify-center"
-              >
-                <Button className="bg-forest hover:bg-forest/90 text-white px-8 py-3 text-lg">
-                  Schedule Medical Consultation
-                </Button>
-                <Button variant="outline" className="border-forest text-forest hover:bg-forest hover:text-white px-8 py-3 text-lg">
-                  Learn More
-                </Button>
-              </motion.div>
+            </div>
+          </div>
+          
+          {/* Background Pattern */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-forest/80 via-sage/60 to-forest/90"></div>
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-sage/40 to-transparent"></div>
+          </div>
+        </motion.section>
+
+        {/* Main Content */}
+        <motion.section 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="py-16 bg-white"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl font-bold text-charcoal mb-8">
+                Medical Weight Loss
+              </h2>
+              <p className="text-lg text-charcoal/80 leading-relaxed">
+                Medical Weight Loss is a doctor-supervised, science-based program designed to help you lose weight safely, effectively, and sustainably. Unlike fad diets, our program is personalized to your body, health history, and lifestyle—so you get real, long-term results.
+              </p>
             </div>
           </div>
         </motion.section>
 
         {/* Features Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-sage/10">
           <div className="container mx-auto px-4">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -113,67 +134,22 @@ export default function MedicalWeightLossPage() {
             >
               Why Choose Medical Weight Loss?
             </motion.h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
+                  whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <feature.icon className="w-16 h-16 text-forest mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-charcoal mb-2">{feature.title}</h3>
-                  <p className="text-charcoal/70">{feature.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Programs Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl font-bold text-charcoal mb-12 text-center"
-            >
-              Our Medical Programs
-            </motion.h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {programs.map((program, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <Card className="h-full shadow-lg hover:shadow-xl transition-all">
-                    <CardContent className="p-8">
-                      <div className="text-center mb-6">
-                        <h3 className="text-2xl font-bold text-charcoal mb-2">{program.title}</h3>
-                        <div className="flex items-center justify-center gap-2 text-charcoal/70 mb-4">
-                          <Clock className="w-4 h-4" />
-                          <span>{program.duration}</span>
-                        </div>
-                        <div className="text-4xl font-bold text-forest mb-4">{program.price}</div>
+                  <Card className="h-full shadow-lg hover:shadow-xl transition-all duration-300 bg-white border-0">
+                    <CardContent className="p-8 text-center">
+                      <div className="w-16 h-16 bg-forest/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <feature.icon className="w-8 h-8 text-forest" />
                       </div>
-                      
-                      <ul className="space-y-3 mb-8">
-                        {program.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-forest mt-0.5 flex-shrink-0" />
-                            <span className="text-charcoal/80">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      <Button className="w-full bg-forest hover:bg-forest/90 text-white">
-                        Start This Program
-                      </Button>
+                      <h3 className="text-xl font-bold text-charcoal mb-4">{feature.title}</h3>
+                      <p className="text-charcoal/70 leading-relaxed">{feature.desc}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -182,31 +158,105 @@ export default function MedicalWeightLossPage() {
           </div>
         </section>
 
-        {/* Benefits Section */}
+        {/* What Is Medical Weight Loss Section */}
+        <section className="py-16 relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/modern-medical-consultation-doctor-patient.jpg" 
+              alt="Medical consultation" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/80 to-sage/70"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.h3 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl font-bold text-white mb-12 text-center"
+            >
+              Our Medical Weight Loss Program Includes
+            </motion.h3>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  number: "1",
+                  title: "Doctor-Supervised Care",
+                  description: "Your journey begins with a complete medical evaluation, including health history, body composition, and metabolic assessment. Your plan is designed and monitored by licensed medical providers."
+                },
+                {
+                  number: "2",
+                  title: "Personalized Weight Loss Plan",
+                  description: "No one-size-fits-all approach. Your program may include: Customized nutrition plans, Lifestyle and habit coaching, Exercise guidance tailored to your ability, Medical support when needed."
+                },
+                {
+                  number: "3",
+                  title: "FDA-Approved Weight Loss Medications (If Appropriate)",
+                  description: "For eligible patients, we may prescribe FDA-approved weight loss medications to help control appetite, reduce cravings, and improve metabolism—always under close medical supervision."
+                },
+                {
+                  number: "4",
+                  title: "Ongoing Monitoring & Support",
+                  description: "Regular check-ins ensure your progress stays on track. Your plan is adjusted as your body changes, keeping weight loss safe and effective."
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <Card className="h-full shadow-xl bg-white/95 backdrop-blur-sm border-0">
+                    <CardContent className="p-6">
+                      <div className="w-12 h-12 bg-forest text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                        {item.number}
+                      </div>
+                      <h4 className="text-lg font-bold text-charcoal mb-3">{item.title}</h4>
+                      <p className="text-charcoal/80 text-sm leading-relaxed">{item.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What Is Medical Weight Loss Info Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl font-bold text-charcoal mb-8 text-center"
-              >
-                Program Benefits
-              </motion.h2>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="grid md:grid-cols-2 gap-4"
-              >
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-forest mt-1 flex-shrink-0" />
-                    <span className="text-charcoal/80 text-lg">{benefit}</span>
-                  </div>
-                ))}
-              </motion.div>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                {/* Left side - Image */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <img 
+                    src="https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/1-beautiful-slim-womanposing-and-smiling-scottsdale-weightloss-center.webp" 
+                    alt="Beautiful slim woman" 
+                    className="w-full h-auto rounded-lg shadow-lg" 
+                  />
+                </motion.div>
+                
+                {/* Right side - Content */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <h2 className="text-4xl font-bold text-charcoal mb-6">
+                    What Is Medical Weight Loss?
+                  </h2>
+                  <p className="text-lg text-charcoal/80 leading-relaxed">
+                    Medical Weight Loss combines clinical evaluation, FDA-approved treatments, nutrition guidance, and ongoing medical support to help you reach and maintain a healthy weight. Every plan is customized and monitored by experienced healthcare professionals.
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -244,28 +294,6 @@ export default function MedicalWeightLossPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 bg-forest text-white">
-          <div className="container mx-auto px-4 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold mb-4">Ready to Start Your Medical Weight Loss Journey?</h2>
-              <p className="text-xl mb-8 opacity-90">Schedule your medical consultation with our board-certified physicians</p>
-              <div className="flex gap-4 justify-center">
-                <Button className="bg-white text-forest hover:bg-ivory text-lg px-8 py-3">
-                  Schedule Medical Consultation
-                </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-forest text-lg px-8 py-3">
-                  Call Now
-                </Button>
-              </div>
-            </motion.div>
           </div>
         </section>
 
