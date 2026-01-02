@@ -117,13 +117,23 @@ export default function GLP1Page() {
         </motion.section>
 
         {/* Our Programs Section with Background */}
-        <section className="py-12">
-          <div className="container mx-auto px-4">
+        <section className="py-12 relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/wellness-spa-calm-lifestyle.jpg" 
+              alt="Wellness background" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/80 to-sage/70"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl font-bold text-charcoal mb-12 text-center"
+              className="text-4xl font-bold text-white mb-12 text-center"
             >
               Our Programs
             </motion.h2>
